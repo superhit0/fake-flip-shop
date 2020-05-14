@@ -1,6 +1,7 @@
 import React from 'react';
 import SmallImgContainer from '../SmallImgContainer';
 import MediumImageContainer from '../MediumImageContainer';
+import LargeImageContainer from '../LargeImageContainer';
 import './styles.css';
 
 export default () => {
@@ -8,7 +9,7 @@ export default () => {
     <div className='container'>
       <SmallImgContainer />
       <MediumImageContainer />
-      <div>3</div>
+      <LargeImageContainer />
     </div>
   );
 };
