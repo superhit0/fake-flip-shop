@@ -1,12 +1,13 @@
 import React from 'react';
 import SmallImgContainer from '../SmallImgContainer';
+import MediumImageContainer from '../MediumImageContainer';
 import './styles.css';
 
 export default () => {
   return (
     <div className='container'>
       <SmallImgContainer />
-      <div>2</div>
+      <MediumImageContainer />
       <div>3</div>
     </div>
   );
