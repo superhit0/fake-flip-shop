@@ -1,8 +1,11 @@
 .large-img-container {
     width: 1000px;
     padding: 2px;
+    overflow: hidden;
 }
 
 .large-img {
     width: 100%;
+    object-fit: none;
+    object-position: 0 0;
 }
