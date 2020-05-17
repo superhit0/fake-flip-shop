@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import './styles.css';
 
-const images = [1, 2, 3, 4, 5, 6];
-
-const renderImages = () => {
+const renderImages = (images) => {
   return images.map(image => (
     <div key={image}>
       <img className="small-img" src={`../../assets/small-img-${image}.jpeg`} />
@@ -11,10 +11,14 @@ const renderImages = () => {
   ));
 };
 
-export default () => {
+const mapStateToProps = ({ images }) => ({ images });
+
+const App = ({ images }) => {
   return (
     <div className='small-img-container'>
-      {renderImages()}
+      {renderImages(images)}
     </div>
   );
 };
+
+export default connect(mapStateToProps)(App);
