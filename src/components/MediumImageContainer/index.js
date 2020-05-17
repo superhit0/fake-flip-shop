@@ -13,17 +13,32 @@ class App extends Component {
     this.state = {
       isOverLayHidden: true
     };
+
+    this.overLayRef = React.createRef();
   }
 
   getOverlayPosition = (e) => {
     const { clientX: mouseX, clientY: mouseY } = e;
     const { x, y, height, width } = e.currentTarget.getBoundingClientRect();
 
-    const xPos = (mouseX - x);
-    const yPos = (mouseY - y - height);
+    const overlayWidth = this.overLayRef.current.offsetWidth;
+    const overlayHeight = this.overLayRef.current.offsetHeight;
 
-    const xPer = (xPos) * 100 / width;
-    const yPer = (mouseY - y) * 100 / height;
+    let xPos = (mouseX - x);
+    let yPos = (mouseY - y - height);
+    let yPosAbs = (mouseY - y);
+
+    if(xPos < overlayWidth/2) xPos = overlayWidth/2;
+    if(xPos > width - overlayWidth/2) xPos = width - overlayWidth/2;
+
+    if(yPos > -overlayHeight/2) yPos = -overlayHeight/2;
+    if(yPos < overlayHeight/2 - height) yPos = overlayHeight/2 - height;
+
+    if(yPosAbs < overlayHeight/2) yPosAbs = overlayHeight/2;
+    if(yPosAbs > height - overlayHeight/2) yPosAbs = height - overlayHeight/2;
+
+    const xPer = (xPos - overlayWidth/2) * 100 / (width - overlayWidth);
+    const yPer = (yPosAbs - overlayHeight/2) * 100 / (height - overlayHeight);
 
     return {
       x: xPos + 'px',
@@ -70,7 +85,7 @@ class App extends Component {
     return (
       <div className="med-img-container" onMouseEnter={this.showOverlay} onMouseMove={this.positionOverlay} >
         <img className="med-img" src={`../../assets/med-img-${selectedImage}.jpeg`} onMouseOut={this.hideOverlay} />
-        <div className={overlayClass} style={overLayStyle} />
+        <div ref={this.overLayRef} className={overlayClass} style={overLayStyle} />
       </div>
     );
   }
