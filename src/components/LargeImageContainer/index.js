@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 
 import './styles.css';
 
-const mapStateToProps = ({ selectedImage }) => ({ selectedImage });
+const mapStateToProps = ({ selectedImage, overlay }) => ({ selectedImage, overlay });
 
-const App = ({ selectedImage }) => {
+const App = ({ selectedImage, overlay }) => {
+  const imagePosition = {
+    objectPosition: `${overlay.xPer} ${overlay.yPer}`
+  };
   return (
     <div className="large-img-container">
-      <img className="large-img" src={`../../assets/large-img-${selectedImage}.jpeg`} />
+      <img className="large-img" src={`../../assets/large-img-${selectedImage}.jpeg`} style={imagePosition}/>
     </div>
   );
 };
