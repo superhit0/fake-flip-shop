@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setOverlayPosition } from '../../actions/overlay';
 
 import './styles.css';
 
-const mapStateToProps = ({ selectedImage }) => ({ selectedImage });
+const mapStateToProps = ({ selectedImage, overlay }) => ({ selectedImage, overlay });
+const mapActionToProps = () => ({ setOverlayPosition });
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOverLayHidden: true,
-      overLayStyle: {
-        transform: 'translate(-50%, -50%)'
-      }
+      isOverLayHidden: true
     };
   }
 
   getOverlayPosition(e) {
     const { clientX: mouseX, clientY: mouseY } = e;
-    const { x, y, height } = e.currentTarget.getBoundingClientRect();
+    const { x, y, height, width } = e.currentTarget.getBoundingClientRect();
 
     const xPos = (mouseX - x);
     const yPos = (mouseY - y - height);
 
+    const xPer = xPos * 100 / width;
+    const yPer = (mouseY - y) * 100 / height;
+
     return {
       x: xPos + 'px',
-      y: yPos + 'px'
+      y: yPos + 'px',
+      xPer: xPer + '%',
+      yPer: yPer + '%'
     };
-  }
-
-  getOverLayStyle(e) {
-    const { x, y } = this.getOverlayPosition(e);
-    return {
-      transform: `translate(-50%, -50%) translate(${x}, ${y})`
-    }
   }
 
   showOverlay = () => {
@@ -44,10 +41,9 @@ class App extends Component {
   }
 
   positionOverlay = (e) => {
-    const overLayStyle = this.getOverLayStyle(e);
-    this.setState({
-      overLayStyle
-    });
+    const overlayPosition = this.getOverlayPosition(e);
+
+    this.props.setOverlayPosition(overlayPosition);
   }
 
   hideOverlay = () => {
@@ -58,9 +54,13 @@ class App extends Component {
   }
 
   render() {
-    const { isOverLayHidden, overLayStyle } = this.state;
-    const { selectedImage } = this.props;
+    const { isOverLayHidden } = this.state;
+    const { selectedImage, overlay: { x = 0, y = 0 } = {} } = this.props;
+
     const overlayClass = isOverLayHidden ? 'med-overlay hidden' : 'med-overlay';
+    const overLayStyle = {
+      transform: `translate(-50%, -50%) translate(${x}, ${y})`
+    }
     return (
       <div className="med-img-container" onMouseEnter={this.showOverlay} onMouseMove={this.positionOverlay} >
         <img className="med-img" src={`../../assets/med-img-${selectedImage}.jpeg`} onMouseOut={this.hideOverlay} />
@@ -70,4 +70,4 @@ class App extends Component {
   }
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapActionToProps())(App);
