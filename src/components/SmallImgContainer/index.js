@@ -20,7 +20,7 @@ const selectImageHandler = (event, reduxSelectImageHandler) => {
 };
 
 const mapStateToProps = ({ images }) => ({ images });
-const mapDispatchToProps = () => ({ selectImage });
+const mapActionToProps = () => ({ selectImage });
 
 const App = ({ images, selectImage }) => {
   return (
@@ -30,4 +30,4 @@ const App = ({ images, selectImage }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps())(App);
+export default connect(mapStateToProps, mapActionToProps())(App);
