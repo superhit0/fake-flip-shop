@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setLargeImageProps } from '../../actions';
 
 import './styles.css';
 
 const mapStateToProps = ({ selectedImage, overlay }) => ({ selectedImage, overlay });
+const mapActionToProps = () => ({ setLargeImageProps });
 
-const App = ({ selectedImage, overlay }) => {
-  const imagePosition = {
-    objectPosition: `${overlay.xPer} ${overlay.yPer}`
-  };
-  return (
-    <div className="large-img-container">
-      <img className="large-img" src={`../../assets/large-img-${selectedImage}.jpeg`} style={imagePosition}/>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.largeImgContainerRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const { offsetHeight, offsetWidth } = this.largeImgContainerRef.current;
+    this.props.setLargeImageProps({
+      width: offsetWidth,
+      height: offsetHeight
+    });
+  }
+
+  componentDidUpdate() {
+    const { offsetHeight, offsetWidth } = this.largeImgContainerRef.current;
+    this.props.setLargeImageProps({
+      width: offsetWidth,
+      height: offsetHeight
+    });
+  }
+
+  render() {
+    const { selectedImage, overlay } = this.props;
+    const imagePosition = {
+      objectPosition: `${overlay.xPer} ${overlay.yPer}`
+    };
+
+    return (
+      <div className="large-img-container" ref={this.largeImgContainerRef}>
+        <img className="large-img" src={`../../assets/large-img-${selectedImage}.jpeg`} style={imagePosition}/>
+      </div>
+    );
+  }
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapActionToProps())(App);

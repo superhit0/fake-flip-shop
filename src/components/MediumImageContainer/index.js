@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setOverlayPosition } from '../../actions/overlay';
+import { setOverlayPosition } from '../../actions';
 
 import './styles.css';
 
-const mapStateToProps = ({ selectedImage, overlay }) => ({ selectedImage, overlay });
+const mapStateToProps = ({ selectedImage, overlay, largeImage }) => ({ selectedImage, overlay, largeImage });
 const mapActionToProps = () => ({ setOverlayPosition });
 
 class App extends Component {
@@ -15,14 +15,14 @@ class App extends Component {
     };
   }
 
-  getOverlayPosition(e) {
+  getOverlayPosition = (e) => {
     const { clientX: mouseX, clientY: mouseY } = e;
     const { x, y, height, width } = e.currentTarget.getBoundingClientRect();
 
     const xPos = (mouseX - x);
     const yPos = (mouseY - y - height);
 
-    const xPer = xPos * 100 / width;
+    const xPer = (xPos) * 100 / width;
     const yPer = (mouseY - y) * 100 / height;
 
     return {
@@ -53,12 +53,18 @@ class App extends Component {
     });
   }
 
+  getOverlayHeight(largeImage) {
+    return (largeImage.height*200/largeImage.width) + 'px';
+  }
+
   render() {
     const { isOverLayHidden } = this.state;
-    const { selectedImage, overlay: { x = 0, y = 0 } = {} } = this.props;
+    const { selectedImage, overlay: { x = 0, y = 0 } = {}, largeImage } = this.props;
 
     const overlayClass = isOverLayHidden ? 'med-overlay hidden' : 'med-overlay';
+    const overlayHeight = this.getOverlayHeight(largeImage);
     const overLayStyle = {
+      height: overlayHeight,
       transform: `translate(-50%, -50%) translate(${x}, ${y})`
     }
     return (
