@@ -10,24 +10,30 @@ class App extends Component {
     super(props);
     this.state = {
       isOverLayHidden: true,
-      overLayPosition: {
-        left: '50%',
-        top: '50%'
+      overLayStyle: {
+        transform: 'translate(-50%, -50%)'
       }
     };
   }
 
   getOverlayPosition(e) {
     const { clientX: mouseX, clientY: mouseY } = e;
-    const { x, y, height, width } = e.currentTarget.getBoundingClientRect();
+    const { x, y, height } = e.currentTarget.getBoundingClientRect();
 
-    const xPos = (mouseX - x) * 100 / width;
-    const yPos = (mouseY - y) * 100 / height;
+    const xPos = (mouseX - x);
+    const yPos = (mouseY - y - height);
 
     return {
-      left: xPos + '%',
-      top: yPos + '%'
+      x: xPos + 'px',
+      y: yPos + 'px'
     };
+  }
+
+  getOverLayStyle(e) {
+    const { x, y } = this.getOverlayPosition(e);
+    return {
+      transform: `translate(-50%, -50%) translate(${x}, ${y})`
+    }
   }
 
   showOverlay = () => {
@@ -38,9 +44,9 @@ class App extends Component {
   }
 
   positionOverlay = (e) => {
-    const overLayPosition = this.getOverlayPosition(e);
+    const overLayStyle = this.getOverLayStyle(e);
     this.setState({
-      overLayPosition
+      overLayStyle
     });
   }
 
@@ -52,13 +58,13 @@ class App extends Component {
   }
 
   render() {
-    const { isOverLayHidden, overLayPosition } = this.state;
+    const { isOverLayHidden, overLayStyle } = this.state;
     const { selectedImage } = this.props;
     const overlayClass = isOverLayHidden ? 'med-overlay hidden' : 'med-overlay';
     return (
       <div className="med-img-container" onMouseEnter={this.showOverlay} onMouseMove={this.positionOverlay} >
         <img className="med-img" src={`../../assets/med-img-${selectedImage}.jpeg`} onMouseOut={this.hideOverlay} />
-        <div className={overlayClass} style={overLayPosition} />
+        <div className={overlayClass} style={overLayStyle} />
       </div>
     );
   }
