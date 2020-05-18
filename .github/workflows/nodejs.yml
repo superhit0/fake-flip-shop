@@ -1,0 +1,35 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: |
+        git config --local user.email "superhit0@github.com"
+        git config --global user.name ${{ secrets.MY_NAME }}
+        git add -f build
+        git commit -m "Deploying to GH Pages"
+        git subtree push --prefix build origin gh-pages
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        branch: gh-pages
+        force: true
