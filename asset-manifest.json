@@ -1,22 +1,34 @@
 {
   "files": {
-    "main.css": "/fake-flip-shop/static/css/main.47ea8592.chunk.css",
-    "main.js": "/fake-flip-shop/static/js/main.eca198fd.chunk.js",
-    "main.js.map": "/fake-flip-shop/static/js/main.eca198fd.chunk.js.map",
+    "main.css": "/fake-flip-shop/static/css/main.d5ad81cb.chunk.css",
+    "main.js": "/fake-flip-shop/static/js/main.c761c088.chunk.js",
+    "main.js.map": "/fake-flip-shop/static/js/main.c761c088.chunk.js.map",
     "runtime-main.js": "/fake-flip-shop/static/js/runtime-main.a19e4343.js",
     "runtime-main.js.map": "/fake-flip-shop/static/js/runtime-main.a19e4343.js.map",
     "static/js/2.65d2d8de.chunk.js": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js",
     "static/js/2.65d2d8de.chunk.js.map": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.map",
     "index.html": "/fake-flip-shop/index.html",
-    "precache-manifest.a0ec1c3db61b3bc53bb3ac05adcaf9d9.js": "/fake-flip-shop/precache-manifest.a0ec1c3db61b3bc53bb3ac05adcaf9d9.js",
+    "precache-manifest.2e2f13457d218872666544dfd4d0e088.js": "/fake-flip-shop/precache-manifest.2e2f13457d218872666544dfd4d0e088.js",
     "service-worker.js": "/fake-flip-shop/service-worker.js",
-    "static/css/main.47ea8592.chunk.css.map": "/fake-flip-shop/static/css/main.47ea8592.chunk.css.map",
-    "static/js/2.65d2d8de.chunk.js.LICENSE.txt": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.LICENSE.txt"
+    "static/css/main.d5ad81cb.chunk.css.map": "/fake-flip-shop/static/css/main.d5ad81cb.chunk.css.map",
+    "static/js/2.65d2d8de.chunk.js.LICENSE.txt": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.LICENSE.txt",
+    "static/media/large-img-1.jpeg": "/fake-flip-shop/static/media/large-img-1.eaf97402.jpeg",
+    "static/media/large-img-2.jpeg": "/fake-flip-shop/static/media/large-img-2.d2f7fda7.jpeg",
+    "static/media/large-img-3.jpeg": "/fake-flip-shop/static/media/large-img-3.9e1eb5bb.jpeg",
+    "static/media/large-img-4.jpeg": "/fake-flip-shop/static/media/large-img-4.6802a430.jpeg",
+    "static/media/large-img-5.jpeg": "/fake-flip-shop/static/media/large-img-5.584a8f33.jpeg",
+    "static/media/large-img-6.jpeg": "/fake-flip-shop/static/media/large-img-6.fea8ea38.jpeg",
+    "static/media/med-img-1.jpeg": "/fake-flip-shop/static/media/med-img-1.833d81f8.jpeg",
+    "static/media/med-img-2.jpeg": "/fake-flip-shop/static/media/med-img-2.a42358d5.jpeg",
+    "static/media/med-img-3.jpeg": "/fake-flip-shop/static/media/med-img-3.43b17848.jpeg",
+    "static/media/med-img-4.jpeg": "/fake-flip-shop/static/media/med-img-4.0d773adf.jpeg",
+    "static/media/med-img-5.jpeg": "/fake-flip-shop/static/media/med-img-5.47254f6d.jpeg",
+    "static/media/med-img-6.jpeg": "/fake-flip-shop/static/media/med-img-6.a1a1f799.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.a19e4343.js",
     "static/js/2.65d2d8de.chunk.js",
-    "static/css/main.47ea8592.chunk.css",
-    "static/js/main.eca198fd.chunk.js"
+    "static/css/main.d5ad81cb.chunk.css",
+    "static/js/main.c761c088.chunk.js"
   ]
 }
