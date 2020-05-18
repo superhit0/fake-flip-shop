@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fake-flip-shop/static/css/main.47ea8592.chunk.css",
+    "main.js": "/fake-flip-shop/static/js/main.eca198fd.chunk.js",
+    "main.js.map": "/fake-flip-shop/static/js/main.eca198fd.chunk.js.map",
+    "runtime-main.js": "/fake-flip-shop/static/js/runtime-main.a19e4343.js",
+    "runtime-main.js.map": "/fake-flip-shop/static/js/runtime-main.a19e4343.js.map",
+    "static/js/2.65d2d8de.chunk.js": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js",
+    "static/js/2.65d2d8de.chunk.js.map": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.map",
+    "index.html": "/fake-flip-shop/index.html",
+    "precache-manifest.a0ec1c3db61b3bc53bb3ac05adcaf9d9.js": "/fake-flip-shop/precache-manifest.a0ec1c3db61b3bc53bb3ac05adcaf9d9.js",
+    "service-worker.js": "/fake-flip-shop/service-worker.js",
+    "static/css/main.47ea8592.chunk.css.map": "/fake-flip-shop/static/css/main.47ea8592.chunk.css.map",
+    "static/js/2.65d2d8de.chunk.js.LICENSE.txt": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a19e4343.js",
+    "static/js/2.65d2d8de.chunk.js",
+    "static/css/main.47ea8592.chunk.css",
+    "static/js/main.eca198fd.chunk.js"
+  ]
+}
