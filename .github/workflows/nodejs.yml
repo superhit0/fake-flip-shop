@@ -27,4 +27,4 @@ jobs:
         git add -f build
         git commit -m "Deploying to GH Pages"
         git remote add deploy "https://superhit0:${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-        git subtree push -f --prefix build deploy gh-pages
+        npm run deploy

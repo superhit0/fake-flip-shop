@@ -7,7 +7,7 @@ import './styles.css';
 const renderImages = (images) => {
   return images.map(image => (
     <div key={image}>
-      <img className="small-img" data-id={image} alt="Small" src={`../../assets/small-img-${image}.jpeg`} />
+      <img className="small-img" data-id={image} alt="Small" src={require(`../../../assets/small-img-${image}.jpeg`)} />
     </div>
   ));
 };

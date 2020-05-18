@@ -38,7 +38,7 @@ class App extends Component {
 
     return (
       <div className="large-img-container" ref={this.largeImgContainerRef}>
-        <img className="large-img" src={`../../assets/large-img-${selectedImage}.jpeg`} alt="Large" style={imagePosition}/>
+        <img className="large-img" src={require(`../../../assets/large-img-${selectedImage}.jpeg`)} alt="Large" style={imagePosition}/>
       </div>
     );
   }
