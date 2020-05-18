@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deployed on GH-Pages
+https://superhit0.github.io/fake-flip-shop/
+
 ## Available Scripts
 
 In the project directory, you can run:
