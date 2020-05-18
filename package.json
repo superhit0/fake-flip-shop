@@ -2,6 +2,7 @@
   "name": "fake-flip-shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://superhit0.github.io/fake-flip-shop/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
