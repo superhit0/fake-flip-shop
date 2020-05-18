@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fake-flip-shop/static/css/main.d5ad81cb.chunk.css",
+    "main.css": "/fake-flip-shop/static/css/main.5ff135fc.chunk.css",
     "main.js": "/fake-flip-shop/static/js/main.c761c088.chunk.js",
     "main.js.map": "/fake-flip-shop/static/js/main.c761c088.chunk.js.map",
     "runtime-main.js": "/fake-flip-shop/static/js/runtime-main.a19e4343.js",
@@ -8,9 +8,9 @@
     "static/js/2.65d2d8de.chunk.js": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js",
     "static/js/2.65d2d8de.chunk.js.map": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.map",
     "index.html": "/fake-flip-shop/index.html",
-    "precache-manifest.2e2f13457d218872666544dfd4d0e088.js": "/fake-flip-shop/precache-manifest.2e2f13457d218872666544dfd4d0e088.js",
+    "precache-manifest.72e4a52be7d2d48681b33e0ac899baea.js": "/fake-flip-shop/precache-manifest.72e4a52be7d2d48681b33e0ac899baea.js",
     "service-worker.js": "/fake-flip-shop/service-worker.js",
-    "static/css/main.d5ad81cb.chunk.css.map": "/fake-flip-shop/static/css/main.d5ad81cb.chunk.css.map",
+    "static/css/main.5ff135fc.chunk.css.map": "/fake-flip-shop/static/css/main.5ff135fc.chunk.css.map",
     "static/js/2.65d2d8de.chunk.js.LICENSE.txt": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.LICENSE.txt",
     "static/media/large-img-1.jpeg": "/fake-flip-shop/static/media/large-img-1.eaf97402.jpeg",
     "static/media/large-img-2.jpeg": "/fake-flip-shop/static/media/large-img-2.d2f7fda7.jpeg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.a19e4343.js",
     "static/js/2.65d2d8de.chunk.js",
-    "static/css/main.d5ad81cb.chunk.css",
+    "static/css/main.5ff135fc.chunk.css",
     "static/js/main.c761c088.chunk.js"
   ]
 }

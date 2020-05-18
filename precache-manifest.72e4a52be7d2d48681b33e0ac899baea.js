@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1679d83cb917f735930db45cae83445f",
+    "revision": "260f345e82f1d884d5ef15fcf99729f3",
     "url": "/fake-flip-shop/index.html"
   },
   {
-    "revision": "5b146649d9676cd41415",
-    "url": "/fake-flip-shop/static/css/main.d5ad81cb.chunk.css"
+    "revision": "b354f17305f52ce5fa35",
+    "url": "/fake-flip-shop/static/css/main.5ff135fc.chunk.css"
   },
   {
     "revision": "9ab677118af780d5dbe6",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fake-flip-shop/static/js/2.65d2d8de.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5b146649d9676cd41415",
+    "revision": "b354f17305f52ce5fa35",
     "url": "/fake-flip-shop/static/js/main.c761c088.chunk.js"
   },
   {
