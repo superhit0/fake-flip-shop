@@ -84,7 +84,7 @@ class App extends Component {
     }
     return (
       <div className="med-img-container" onMouseEnter={this.showOverlay} onMouseMove={this.positionOverlay} >
-        <img className="med-img" src={`../../assets/med-img-${selectedImage}.jpeg`} onMouseOut={this.hideOverlay} />
+        <img className="med-img" src={`../../assets/med-img-${selectedImage}.jpeg`} alt="Medium" onMouseOut={this.hideOverlay} />
         <div ref={this.overLayRef} className={overlayClass} style={overLayStyle} />
       </div>
     );
