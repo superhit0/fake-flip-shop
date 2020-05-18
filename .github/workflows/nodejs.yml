@@ -27,9 +27,9 @@ jobs:
         git add -f build
         git commit -m "Deploying to GH Pages"
     - name: Push changes
-      uses: ad-m/github-push-action@v0.5.0
+      uses: jbrooksuk/github-subtree-push-action@3ac2f7c7d78b986a2e1f2b97c7d616146e817255
       with:
         github_token: ${{ secrets.TOKEN }}
-        directory: 'build'
+        publish_directory: 'build'
         branch: gh-pages
         force: true
