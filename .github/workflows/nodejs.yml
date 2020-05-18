@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Deploying to GH Pages
 
 on:
   push:
@@ -20,11 +20,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run build --if-present
     - run: |
         git config --local user.email "superhit0@github.com"
         git config --global user.name ${{ secrets.MY_NAME }}
-        git add -f build
-        git commit -m "Deploying to GH Pages"
         git remote add deploy "https://superhit0:${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         npm run deploy
