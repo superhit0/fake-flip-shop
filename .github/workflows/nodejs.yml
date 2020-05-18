@@ -26,10 +26,5 @@ jobs:
         git config --global user.name ${{ secrets.MY_NAME }}
         git add -f build
         git commit -m "Deploying to GH Pages"
-    - name: Push changes
-      uses: jbrooksuk/github-subtree-push-action@3ac2f7c7d78b986a2e1f2b97c7d616146e817255
-      with:
-        github_token: ${{ secrets.TOKEN }}
-        publish_directory: 'build'
-        branch: gh-pages
-        force: true
+        git remote add deploy "https://superhit0:${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+        git subtree push --prefix build deploy gh-pages
